@@ -34,8 +34,11 @@ jobs:
           from pathlib import Path
           import re, sys
           s = Path("SKILL.md").read_text(encoding="utf-8")
-          m = re.match(r"^---\nname: (\S+)\ndescription: (.+)\n---\n", s)
-          assert m, "SKILL.md 缺 frontmatter 或字段不全"
-          assert len(m.group(2)) > 20, "description 太短，agent 无法路由"
-          print("SKILL.md frontmatter ✓", m.group(1))
+          fm = re.match(r"^---\n(.*?)\n---\n", s, re.S)
+          assert fm, "SKILL.md 缺 frontmatter"
+          name = re.search(r"^name: (\S+)$", fm.group(1), re.M)
+          desc = re.search(r"^description: (.+)$", fm.group(1), re.M)
+          assert name and desc, "frontmatter 缺 name/description"
+          assert len(desc.group(1)) > 20, "description 太短，agent 无法路由"
+          print("SKILL.md frontmatter ✓", name.group(1))
           EOF
