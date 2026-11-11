@@ -1,5 +1,7 @@
 # job-fit-skill — 简历 × JD 岗位匹配评分（Agent Skill）
 
+[![CI](https://github.com/Liooo0/job-fit-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/Liooo0/job-fit-skill/actions/workflows/ci.yml)
+
 把简历和 JD 贴给会用的 agent（如 Claude Code），它调**确定性规则引擎**给出可解释的五维匹配报告：
 总分 + 分档、技能命中、相关缺口、风险提示，再附面试追问建议。
 
