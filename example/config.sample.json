@@ -1,0 +1,4 @@
+{
+  "skills": ["Python", "FastAPI", "RAG", "Agent", "知识库", "工作流", "LLM", "Chroma", "Docker", "SQLite"],
+  "target_roles": ["AI应用工程师", "后端开发工程师"]
+}
