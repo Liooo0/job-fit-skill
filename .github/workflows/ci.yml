@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   reproducibility:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
